@@ -1,0 +1,29 @@
+<div class="app-container">
+  <div class="app-bar">
+    <div class="logo">
+      <!-- Left side logo -->
+      <img src="../../../assets/logo.png" alt="Logo" />
+    </div>
+    <div class="page-name">
+      <!-- Center page name -->
+      {{ pageTitle }}
+      <!-- <router-outlet></router-outlet> -->
+      Dashboard
+    </div>
+
+    <div class="profile">
+      <p class="username" (click)="toggleLogout()">
+        {{ username }}
+        <mat-icon *ngIf="!showLogout">keyboard_arrow_down</mat-icon>
+        <mat-icon *ngIf="showLogout">keyboard_arrow_up</mat-icon>
+      </p>
+      <div class="profile-dropdown" [ngClass]="{ show: showLogout }">
+        <button *ngIf="showLogout" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <!-- <ng-content></ng-content> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

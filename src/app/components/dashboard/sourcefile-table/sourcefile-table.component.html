@@ -1,0 +1,38 @@
+<div>
+    <div class="task-filters">
+      <button [class.selected]="selectedFilter==='all'" (click)="selectedFilter='all'; filterTasks()">All tasks</button>
+      <button [class.selected]="selectedFilter==='assignedToMe'" (click)="selectedFilter='assignedToMe'; filterTasks()">Assigned to me</button>
+      <button [class.selected]="selectedFilter==='needsToAssign'" (click)="selectedFilter='needsToAssign'; filterTasks()">Needs to assign</button>
+    </div>
+  
+    <div class="table-search">
+      <input type="text" [(ngModel)]="searchKeyword" placeholder="Search tasks" (input)="searchTasks()">
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Source file name</th>
+          <th>Created</th>
+          <th>Pending duration</th>
+          <th>Review status</th>
+          <th>Assigned to</th>
+          <th>Assign Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of filteredTaskList">
+          <td>{{task.sourceFileName}}</td>
+          <td>{{task.created | date:'medium'}}</td>
+          <td>{{task.pendingDuration}}</td>
+          <td>{{task.reviewStatus}}</td>
+          <td>{{task.assignedTo || 'Not assigned'}}</td>
+          <td>
+            <button *ngIf="task.assignedTo !== 'you'" (click)="assignTask(task)">Self-assign</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  

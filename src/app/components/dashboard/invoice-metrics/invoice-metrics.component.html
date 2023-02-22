@@ -1,0 +1,19 @@
+<ng-container>
+    <mat-card class="card-style">
+      <mat-card-content>
+        <div class="card-title">Invoice Processing Metrics</div>
+        <div class="mat-grid">
+          <div class="mat-grid-tile" *ngFor="let metric of metricsData">
+            <div class="kpi-container">
+              <div class="kpi-value">{{ metric.value }}</div>
+              <div class="kpi-icon-title">
+                <mat-icon [ngStyle]="{ 'color': metric.color }">{{ metric.icon }}</mat-icon>
+                <span class="kpi-title">{{ metric.title }}</span>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  

@@ -1,0 +1,48 @@
+.login-container {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 93%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-button {
+  background-color: #b5071b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  align-items: center;
+}
+
+.login-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+.login-button:hover {
+  background-color: #b5071b;
+}
+
+/* .lock-avatar {
+    background-color: white !important;
+}
+
+.lock-icon {
+    color: red;
+} */
